@@ -37,7 +37,6 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
 
-            // disable login button unless both username / password is valid
             login.isEnabled = loginState.isDataValid
 
             if (loginState.usernameError != null) {
@@ -100,7 +99,6 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
-        // TODO : initiate successful logged in experience
         Toast.makeText(
                 applicationContext,
                 "$welcome $displayName",
@@ -113,9 +111,6 @@ class LoginActivity : AppCompatActivity() {
     }
 }
 
-/**
- * Extension function to simplify setting an afterTextChanged action to EditText components.
- */
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun afterTextChanged(editable: Editable?) {
