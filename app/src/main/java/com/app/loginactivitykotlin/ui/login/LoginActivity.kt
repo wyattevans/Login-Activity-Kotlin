@@ -18,6 +18,7 @@ import android.widget.Toast
 import com.app.loginactivitykotlin.R
 
 class LoginActivity : AppCompatActivity() {
+    private val simpleTag = this::class.java.simpleName
 
     private lateinit var loginViewModel: LoginViewModel
 
@@ -59,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
             }
             setResult(Activity.RESULT_OK)
 
-            //Complete and destroy login activity once successful
             finish()
         })
 
