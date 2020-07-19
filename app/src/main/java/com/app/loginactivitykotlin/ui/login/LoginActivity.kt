@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(simpleTag, "Main Activity loaded.")
+        Log.d(simpleTag, getString(R.string.main_activity_loaded))
 
         setContentView(R.layout.activity_login)
 
