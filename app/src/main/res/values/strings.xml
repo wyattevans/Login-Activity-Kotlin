@@ -10,4 +10,5 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="main_activity_loaded">Main Activity loaded.</string>
+    <string name="ui_hit">updateUiWithUser hit.</string>
 </resources>
