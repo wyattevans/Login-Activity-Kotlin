@@ -99,6 +99,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
+        Log.d(simpleTag, "updateUiWithUser hit.")
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
         Toast.makeText(
