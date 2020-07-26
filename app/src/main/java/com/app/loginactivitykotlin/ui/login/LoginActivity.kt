@@ -19,13 +19,11 @@ import android.widget.Toast
 import com.app.loginactivitykotlin.R
 
 class LoginActivity : AppCompatActivity() {
-    private val simpleTag = this::class.java.simpleName
 
     private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(simpleTag, getString(R.string.main_activity_loaded))
 
         setContentView(R.layout.activity_login)
 
@@ -99,7 +97,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
-        Log.d(simpleTag, getString(R.string.ui_hit))
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
         Toast.makeText(
@@ -110,7 +107,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
-        Log.d(simpleTag, getString(R.string.login_failed_hit))
         Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
     }
 }
